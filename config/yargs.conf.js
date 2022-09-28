@@ -8,11 +8,17 @@ const argv = require("yargs")
     }).check((argv, options) => {
         if(isNaN(argv.b)) throw 'Base must be a number'
         return true;
-    }).option('t', {
-        alias: 'toList',
+    }).option('l', {
+        alias: 'list',
         type: 'boolean',
         describe: 'Boolean to choose if you want to list the table in the console',
         default: false
+    })
+    .option('t', {
+        alias: 'to',
+        type: 'number',
+        describe: 'Number to indicate how far you want the table',
+        default: 12
     })
     .argv;
 

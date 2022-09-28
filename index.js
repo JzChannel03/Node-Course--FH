@@ -9,10 +9,10 @@ console.clear();
 
 try {
     fs.writeFileSync(
-        "message.txt",
-        new Uint8Array(Buffer.from(tableGenerator(argv.b, argv.t)))
+        `./out/table-of-${argv.b}.txt`,
+        new Uint8Array(Buffer.from(tableGenerator(argv.b, argv.l, argv.t)))
     );
-    console.log('Table created! [./message.txt]'.bgGreen)
+    console.log(`Table created! [./out/table-of-${argv.b}.txt]`.bgGreen)
 } catch (error) {
     console.log(`The table hasn't been created!
     [${error}]`.bgRed)

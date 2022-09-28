@@ -1,12 +1,13 @@
 const colors = require("colors");
 
-const tableGenerator = (base, toList) => {
-    let table, console = "";
-    for (let index = 1; index <= 12; index++) {
+const tableGenerator = (base, list, to) => {
+    let table = "";
+    let consoleTable = "";
+    for (let index = 1; index <= to; index++) {
         table += `${base} * ${index} = ${index * base}\n`;
-        console += `${colors.blue(base)} * ${colors.cyan(index)} = ${colors.green(index * base)}\n`
+        consoleTable += `${colors.blue(base)} * ${colors.cyan(index)} = ${colors.green(index * base)}\n`;
     }
-    if(toList) console.log(console)
+    if(list) console.log(consoleTable)
     return table;
 }
 
