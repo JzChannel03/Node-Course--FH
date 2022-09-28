@@ -4,14 +4,14 @@ const argv = require("yargs")
         demandOption: true,
         type: 'number',
         //default: 5,
-        describe: 'Base para tabla de multiplicar',
+        describe: 'Base of the multiplication table',
     }).check((argv, options) => {
         if(isNaN(argv.b)) throw 'Base must be a number'
         return true;
-    }).option('l', {
-        alias: 'listar',
+    }).option('t', {
+        alias: 'toList',
         type: 'boolean',
-        describe: 'Booleano para elegir si listar tabla en consola',
+        describe: 'Boolean to choose if you want to list the table in the console',
         default: false
     })
     .argv;

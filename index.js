@@ -10,12 +10,12 @@ console.clear();
 try {
     fs.writeFileSync(
         "message.txt",
-        new Uint8Array(Buffer.from(tableGenerator(argv.b, argv.l)))
+        new Uint8Array(Buffer.from(tableGenerator(argv.b, argv.t)))
     );
-    console.log('Tabla creada! [./message.txt]'.bgGreen)
+    console.log('Table created! [./message.txt]'.bgGreen)
 } catch (error) {
-    console.log(`Tabla no ha podido ser creada!
+    console.log(`The table hasn't been created!
     [${error}]`.bgRed)
 } finally{
-    console.log('Proceso terminado.'.bgBlue)
+    console.log('Finished process.'.bgBlue)
 }
