@@ -1,7 +1,7 @@
 import "colors";
 import inquirer from "inquirer";
 
-const question = [
+const questionConf = [
   {
     type: "list",
     name: "option",
@@ -47,7 +47,7 @@ const inquirerMenu = async () => {
   console.log("   Select an option:");
   console.log("=======================\n".green);
 
-  const {option}: {option: string} = await inquirer.prompt(question);
+  const {option}: {option: string} = await inquirer.prompt(questionConf);
 
   return option;
 
@@ -64,12 +64,34 @@ const inquirerPause = async () => {
   ];
 
   console.log('\n')
-  console.clear();
 
   await inquirer.prompt(pause);
 }
 
+const readInputWithTextToShow = async (textToShow: string) => {
+  const conf = [
+    {
+      type: "input",
+      name: "text",
+      message: textToShow,
+      validate(value: string | any[]){
+        if(value.length === 0){
+          return 'Input a value';
+        }
+        return true;
+      }
+    },
+  ];
+
+  console.log("\n");
+  console.clear();
+
+  const { text }: { text: string } = await inquirer.prompt(conf);
+  return text;
+}
+
 export {
   inquirerMenu,
-  inquirerPause
+  inquirerPause,
+  readInputWithTextToShow
 }

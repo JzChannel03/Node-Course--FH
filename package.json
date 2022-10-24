@@ -1,11 +1,12 @@
 {
   "name": "console-interactive-todo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.ts",
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node index.ts",
     "build": "tsc --build tsconfig.json",
     "build:watch": "tsc --build tsconfig.json --watch",
     "lint": "eslint ./src --ext .ts"
@@ -18,11 +19,13 @@
     "colors": "^1.4.0",
     "enquirer": "^2.3.6",
     "inquirer": "^8.2.4",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@types/inquirer": "^9.0.1",
+    "@types/inquirer": "^9.0.2",
     "@types/node": "^18.7.23",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "eslint": "^8.24.0",
